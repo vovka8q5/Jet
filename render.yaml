@@ -1,0 +1,7 @@
+﻿services:
+  - type: web
+    name: luckyjet-bot
+    env: python
+    buildCommand: ""
+    startCommand: python luckyjet_masterbot.py
+    autoDeploy: true
