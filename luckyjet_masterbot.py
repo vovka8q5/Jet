@@ -78,12 +78,8 @@ async def main():
     app.add_handler(CommandHandler("start", start))
     app.add_handler(CommandHandler("signal", signal_command))
     app.add_handler(CommandHandler("risk", set_risk))
-    await app.initialize()
-    await app.start()
-    await app.updater.start_polling()  # Можно оставить, если используется polling
-    await app.updater.idle()
+    await app.run_polling()
 
-# Для Python 3.7+
 if __name__ == "__main__":
     import asyncio
     asyncio.run(main())
