@@ -1,11 +1,11 @@
 services:
   - type: web
     name: luckyjet-bot
-    runtime: python
-    envVars:
-      - key: TOKEN
-        value: YOUR_TELEGRAM_BOT_TOKEN
-      - key: CHANNEL_ID
-        value: "@your_channel_username"  # или числовой ID (например: -1001234567890)
+    env: python
     buildCommand: pip install -r requirements.txt
     startCommand: python luckyjet_masterbot.py
+    envVars:
+      - key: TOKEN
+        sync: false
+      - key: CHANNEL_ID
+        sync: false
